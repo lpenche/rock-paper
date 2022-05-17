@@ -1,3 +1,4 @@
+// Generates random pick bewteen rock,paper and scissors and returns pick
 function computerPlay () {
     let randomNumber = Math.round(Math.random()*(3-1)) + 1;
     let selection;
@@ -12,9 +13,10 @@ function computerPlay () {
     }
     return selection
 }
+// Plays single round taking computerPlay() output and player selection
 
 function singleRound (computerPlay, playerSelection) {
-    playerSelection = playerSelection.toLowerCase()
+    playerSelection = playerSelection.toLowerCase() // Makes player selection non case sensitive.
     
     if (computerPlay === playerSelection) {
         return `Tied, ${computerPlay} is equal to ${playerSelection}` 
