@@ -36,7 +36,7 @@ function singleRound (computerPlay, playerSelection) {
         return `You lose, ${capitalize(computerPlay)} beats ${capitalize(playerSelection)}`
     }
 }
-
+ //Plays five round game, counts score and displays the winner
 function game () {
         let playerCounter = 0;
         let computerCounter = 0;
