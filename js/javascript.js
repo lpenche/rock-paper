@@ -46,8 +46,10 @@ function game () {
         console.log(result);
          if (result.includes("win")) {
              playerCounter++;
-         } else {
+         } else if (result.includes("lose")) {
              computerCounter++
+         } else {
+             
          }
          console.log(`The score is ${playerCounter} - ${computerCounter}`)
     }
