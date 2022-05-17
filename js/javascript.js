@@ -30,20 +30,10 @@ function singleRound (computerPlay, playerSelection) {
     
     if (computerPlay === playerSelection) {
         return `Tied, ${capitalize(computerPlay)} is equal to ${capitalize(playerSelection)}` 
-    } else if (computerPlay === "rock" && playerSelection === "paper") {
+    } else if ((computerPlay === "rock" && playerSelection === "paper") || (computerPlay === "paper" && playerSelection === "scissors") || (computerPlay === "scissors" && playerSelection === "rock")){
         return `You win, ${capitalize(playerSelection)} beats ${capitalize(computerPlay)}` 
-    } else if (computerPlay === "rock" && playerSelection === "scissors") {
-        return `You lose, ${capitalize(computerPlay)} beats ${capitalize(playerSelection)}`
-    } else if (computerPlay === "paper" && playerSelection === "rock") {
-        return `You lose, ${capitalize(computerPlay)} beats ${capitalize(playerSelection)}`
-    } else if (computerPlay === "paper" && playerSelection === "scissors") {
-        return `You win, ${capitalize(playerSelection)} beats ${capitalize(computerPlay)}`
-    } else if (computerPlay === "scissors" && playerSelection === "rock") {
-        return `You win, ${capitalize(playerSelection)} beats ${capitalize(computerPlay)}`
-    } else if (computerPlay === "scissors" && playerSelection === "paper") {
-        return `You lose, ${capitalize(computerPlay)} beats ${capitalize(playerSelection)}`
     } else {
-        return "Coding error"
+        return `You lose, ${capitalize(computerPlay)} beats ${capitalize(playerSelection)}`
     }
 }
 
