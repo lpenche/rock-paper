@@ -27,7 +27,7 @@ function computerPlay () {
 // Plays single round taking computerPlay() output and player selection
 function singleRound (computerPlay, playerSelection) {
     playerSelection = playerSelection.toLowerCase() // Makes player selection non case sensitive.
-    
+
     if (computerPlay === playerSelection) {
         return `Tied, ${capitalize(computerPlay)} is equal to ${capitalize(playerSelection)}` 
     } else if ((computerPlay === "rock" && playerSelection === "paper") || (computerPlay === "paper" && playerSelection === "scissors") || (computerPlay === "scissors" && playerSelection === "rock")){
@@ -37,4 +37,25 @@ function singleRound (computerPlay, playerSelection) {
     }
 }
 
-console.log(singleRound(computerPlay(), "RoCK"))
+function game () {
+        let playerCounter = 0;
+        let computerCounter = 0;
+    for (let i=0; i < 5; i++) {
+        let computerSelection = computerPlay();
+        let result = singleRound(computerSelection,prompt("Pick between rock/paper/scissors" ))
+        console.log(result);
+         if (result.includes("win")) {
+             playerCounter++;
+         } else {
+             computerCounter++
+         }
+         console.log(`The score is ${playerCounter} - ${computerCounter}`)
+    }
+    if (playerCounter > computerCounter) {
+        console.log("Game ended, you won") 
+    } else {
+        console.log("Game ended, you lost")
+    }
+}
+
+game()
