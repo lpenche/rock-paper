@@ -12,3 +12,28 @@ function computerPlay () {
     }
     return selection
 }
+
+function singleRound (computerPlay, playerSelection) {
+    playerSelection = playerSelection.toLowerCase()
+    
+    if (computerPlay === playerSelection) {
+        return `Tied, ${computerPlay} is equal to ${playerSelection}` 
+    } else if (computerPlay === "rock" && playerSelection === "paper") {
+        return `You win, ${playerSelection} beats ${computerPlay}` 
+    } else if (computerPlay === "rock" && playerSelection === "scissors") {
+        return `You lose, ${computerPlay} beats ${playerSelection}`
+    } else if (computerPlay === "paper" && playerSelection === "rock") {
+        return `You lose, ${computerPlay} beats ${playerSelection}`
+    } else if (computerPlay === "paper" && playerSelection === "scissors") {
+        return `You win, ${playerSelection} beats ${computerPlay}`
+    } else if (computerPlay === "scissors" && playerSelection === "rock") {
+        return `You win, ${playerSelection} beats ${computerPlay}`
+    } else if (computerPlay === "scissors" && playerSelection === "paper") {
+        return `You lose, ${computerPlay} beats ${playerSelection}`
+    } else {
+        return "Coding error"
+    }
+}
+
+console.log(computerPlay())
+console.log(singleRound(computerPlay(), "ROCK"))
